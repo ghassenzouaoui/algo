@@ -1,0 +1,25 @@
+ALGORITHM nbr
+VAR
+    ch:STRING;
+    i,nb_c,nb_es,nb_v,nb_m:integer;
+BEGIN
+    read(ch);
+    i=0;
+    nb_c=0;
+    nb_es=0;
+    nb_v=0;
+    WHILE (ch[i]<>".") DO
+    nb_c=nb_c+1;
+       IF (ch[i]==" ") THEN
+        nb_es=nb_es+1;
+       END_IF
+       IF (ch[i] in["a","e","i","o","u","y"]) THEN
+        nb_v=nb_v+1;
+       END_IF
+       i++;
+    END_WHILE
+    nb_m=nb_es+1;
+    write("nombre de mot =",nb_m);
+    write("nombre de caractere =",nb_c+1)
+    write("nombre de voyelle =",nb_v)
+END
